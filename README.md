@@ -9,3 +9,5 @@
  - Set user access token to cookie which allow user can visit later without re-authenticate.
 
 ### Design flows
+
+<p align="center"><img src="docs/design_flow.png" alt="Design Flow" align="center" /></p>
