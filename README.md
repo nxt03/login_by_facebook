@@ -14,6 +14,8 @@
 
 ### Installation
 
+<p align="center"><img src="docs/start_guide.gif" alt="Installation Guide" align="center" /></p>
+
 #### Pull the project
 1. Clone the project: `git clone https://github.com/nxt03/test-nxt03.git`.
 2. Change directory: `cd test-nxt03`.
