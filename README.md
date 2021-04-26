@@ -23,7 +23,7 @@
 1. Inside project, change directory to `backend` folder using command `cd backend`.
 2. Run `bundle install` to install Gem files.
 3. Run `rails db:migrate` to migrate the database file, default datbase is sqlite3.
-4. Set up the environment file `.env` as follows:
+4. Set up the environment file `.env` as follows or use the default one from the project:
 ```
    - FACEBOOK_APP_ID=<your_app_id>
    - FACEBOOK_APP_SECRET=<your_app_secret>
@@ -34,7 +34,7 @@
 1. Open new terminal, change directory to `frontend` folder using command `cd frontend`.
 2. We use [Expo](expo.io) to run the frontend, make sure you install expo client first `npm install --global expo-cli`.
 3. Run `yarn install` to install all dependencies.
-4. Set up the environment file `.env` as follows:
+4. Set up the environment file `.env` as follows or use the default one from the project:
 ```
    - BACKEND_API=http://localhost:3000
    - FACEBOOK_APP_ID=<your_app_id>
