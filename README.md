@@ -41,6 +41,8 @@
 ```
 5. Run `expo web` to start the server, default port is `19006`.
 
+Open the browser and access the frontend via [http://localhost:19006](http://localhost:19006/).
+
 ### Testing
 
 Change directory to `backend`.
