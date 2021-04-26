@@ -53,10 +53,12 @@ Change directory to `backend`.
 
 Run `rspec` command.
 
-<img src="docs/rspec.gif" alt="Rspec testing guide" align="center" />
+<img src="docs/rspec.gif" alt="Rspec testing guide" />
 
 #### Integration test with Cucumber
 
 Run `cucumber` command.
+
+<img src="docs/cucumber.gif" alt="Cucumber testing guide" />
 
 This test using API stubbing instead of call to Facebook directly, ref: .
