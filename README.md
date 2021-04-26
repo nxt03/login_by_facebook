@@ -58,3 +58,5 @@ Run `rspec` command.
 #### Integration test with Cucumber
 
 Run `cucumber` command.
+
+This test using API stubbing instead of call to Facebook directly, ref: .
