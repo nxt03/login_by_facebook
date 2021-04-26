@@ -37,6 +37,15 @@ group :development, :test do
 
   # The Rspec testing framework for Ruby on Rails
   gem 'rspec-rails', '~> 5.0.0'
+
+  # Library for stubbing and setting expectations on HTTP requests in Ruby
+  gem 'webmock'
+
+  # Cucumber-Rails brings Cucumber to Rails 5.x and 6.x
+  gem 'cucumber-rails'
+
+  # Database cleaner support for clean database before and after testing
+  gem 'database_cleaner'
 end
 
 group :development do
