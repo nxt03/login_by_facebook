@@ -61,4 +61,4 @@ Run `cucumber` command.
 
 <img src="docs/cucumber.gif" alt="Cucumber testing guide" />
 
-This test using API stubbing instead of call to Facebook directly, ref: [Webmock env](https://github.com/nxt03/test-nxt03/blob/d4cac9c7cd883efe7829d3d211ae5ada43d4c4a9/backend/features/support/webmock.rb#L8).
+This test using API stubbing instead of call to Facebook directly, reference: [Webmock env](https://github.com/nxt03/test-nxt03/blob/d4cac9c7cd883efe7829d3d211ae5ada43d4c4a9/backend/features/support/webmock.rb#L8).
