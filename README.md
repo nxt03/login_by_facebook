@@ -51,7 +51,7 @@ Change directory to `backend`.
 
 #### API test with Rspec
 
-<p align="center"><img src="docs/rspec_testing.gif" alt="Rspec testing" align="center" /></p>
+<p align="center"><img src="docs/rspec.gif" alt="Rspec testing" align="center" /></p>
 
 #### Integration test with Cucumber
 
