@@ -41,11 +41,18 @@ group :development, :test do
   # Library for stubbing and setting expectations on HTTP requests in Ruby
   gem 'webmock'
 
-  # Cucumber-Rails brings Cucumber to Rails 5.x and 6.x
-  gem 'cucumber-rails'
-
   # Database cleaner support for clean database before and after testing
   gem 'database_cleaner'
+
+  # Factory bot generate fake data
+  gem 'factory_bot_rails'
+end
+
+group :test do
+
+  # Cucumber-Rails brings Cucumber to Rails 5.x and 6.x
+  gem 'cucumber-rails', require: false
+
 end
 
 group :development do

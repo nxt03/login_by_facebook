@@ -10,6 +10,7 @@ module ErrorConcern
     rescue_from AccessTokenError, with: :render_access_token_error
     rescue_from UserCreatedError, with: :render_user_created_error
     rescue_from InvalidUserError, with: :render_invalid_user_error
+    rescue_from ActionController::ParameterMissing, with: :malformed_params_error
   end
 
   private
@@ -24,6 +25,10 @@ module ErrorConcern
 
   def render_invalid_user_error
     render json: { error: 'User is not found or is expired, please re-signin again.' }, status: :bad_request
+  end
+
+  def malformed_params_error
+    render json: { error: 'Malformed params detected' }, status: :bad_request
   end
 
 end
