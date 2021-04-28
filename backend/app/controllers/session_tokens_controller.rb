@@ -4,8 +4,6 @@ class SessionTokensController < ApplicationController
 
   def create
     user = find_or_create_user
-    raise UserCreatedError if user.blank?
-
     render json: { user: user }
   end
 
@@ -23,8 +21,8 @@ class SessionTokensController < ApplicationController
   end
 
   def find_or_create_user
-    user = User.find_by(session_token_params[:provider_id])
-    return User.create(session_token_params) if user.blank?
+    user = User.find_by(provider_id: session_token_params[:provider_id])
+    return User.create!(session_token_params) if user.blank?
 
     user.update(session_token_params)
     user
@@ -40,6 +38,7 @@ class SessionTokensController < ApplicationController
   end
 
   def exchange_long_lived_token
+    raise NoAccessTokenError if session_token_params[:access_token].blank?
     response = HTTParty.get(oauth_url, query: oauth_params)
     raise AccessTokenError if response.code != 200
 

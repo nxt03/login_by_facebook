@@ -44,7 +44,7 @@ RSpec.describe SessionTokensController, type: :controller do
         before { post :auth, params: nil }
 
         it { expect(response).to have_http_status(:bad_request) }
-        it { expect(JSON.parse(response.body)['error']).to eq('Malformed params detected') }
+        it { expect(JSON.parse(response.body)['error']).to eq('Malformed params detected.') }
       end
 
     end
