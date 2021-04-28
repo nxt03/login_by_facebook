@@ -55,10 +55,12 @@ Run `rspec` command.
 
 <img src="docs/rspec.gif" alt="Rspec testing guide" />
 
+Reference test file - [session_tokens_controller_spec.rb](https://github.com/nxt03/test-nxt03/blob/test/backend/spec/controllers/session_tokens_controller_spec.rb)
+
 #### Integration test with Cucumber
 
 Run `cucumber` command.
 
 <img src="docs/cucumber.gif" alt="Cucumber testing guide" />
 
-This test using API stubbing instead of call to Facebook directly, reference code: [env.rb](https://github.com/nxt03/test-nxt03/blob/d4cac9c7cd883efe7829d3d211ae5ada43d4c4a9/backend/features/support/webmock.rb#L8).
+Refenrence test file - [session_tokens_steps.rb](https://github.com/nxt03/test-nxt03/blob/test/backend/features/step_definitions/session_tokens_steps.rb)
