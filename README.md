@@ -68,4 +68,4 @@ Then inside `backend` folder, run `cucumber` command.
 
 <img src="docs/cucumber.gif" alt="Cucumber testing guide" />
 
-Refenrence test file - [session_tokens_steps.rb](https://github.com/nxt03/test-nxt03/blob/test/backend/features/step_definitions/login_or_signup_steps.rb)
+Refenrence test file - [login_or_signup_steps.rb](https://github.com/nxt03/test-nxt03/blob/test/backend/features/step_definitions/login_or_signup_steps.rb)
