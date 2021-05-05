@@ -27,6 +27,7 @@
 3. Run `rails db:migrate` to migrate the database file, default datbase is sqlite3.
 4. Set up the environment file `.env` as follows or use the default one from the project:
 ```
+   - FRONTEND_URL=http://localhost:19006
    - FACEBOOK_APP_ID=<your_app_id>
    - FACEBOOK_APP_SECRET=<your_app_secret>
 ```
@@ -59,8 +60,12 @@ Reference test file - [session_tokens_controller_spec.rb](https://github.com/nxt
 
 #### Integration test with Cucumber
 
-Run `cucumber` command.
+Because frontend serve as standalone application so we need to start frontend first before run the Integration testing.
+
+Inside `frontend` folder, run `expo web` first.
+
+Then inside `backend` folder, run `cucumber` command.
 
 <img src="docs/cucumber.gif" alt="Cucumber testing guide" />
 
-Refenrence test file - [session_tokens_steps.rb](https://github.com/nxt03/test-nxt03/blob/test/backend/features/step_definitions/session_tokens_steps.rb)
+Refenrence test file - [session_tokens_steps.rb](https://github.com/nxt03/test-nxt03/blob/test/backend/features/step_definitions/login_or_signup_steps.rb)
