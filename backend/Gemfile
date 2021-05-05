@@ -53,6 +53,10 @@ group :test do
   # Cucumber-Rails brings Cucumber to Rails 5.x and 6.x
   gem 'cucumber-rails', require: false
 
+  # Auto simulate web browser for testing
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'geckodriver-bin'
 end
 
 group :development do

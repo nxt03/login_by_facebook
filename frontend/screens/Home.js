@@ -8,11 +8,11 @@ const Home = () => {
   const [authenticating, setAuthenticating] = useState(false);
 
   const handleFacebookResponse = async (response) => {
-    setAuthenticating(true);
     if (!response.id) {
       return
     }
 
+    setAuthenticating(true);
     const url = new URL(BACKEND_API + '/session_token');
     const api = await fetch(url, {
       method: 'POST',

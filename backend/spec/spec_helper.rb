@@ -11,6 +11,8 @@
 # a separate helper file that requires the additional dependencies and performs
 # the additional setup, and require it from the spec files that actually need
 # it.
+require 'webmock/rspec'
+
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -93,4 +95,30 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  config.before(:each) do
+    DatabaseCleaner.start
+    # Environment variable for stubing request
+    @client_id = ENV['FACEBOOK_APP_ID']
+    @client_secret = ENV['FACEBOOK_APP_SECRET']
+    @facebook_url = ENV['FACEBOOK_OAUTH_URL']
+
+    stub_request(:get, "#{@facebook_url}/oauth/access_token?client_id=#{@client_id}&client_secret=#{@client_secret}&fb_exchange_token=some_stranged_access_token&grant_type=fb_exchange_token")
+      .with(
+        headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Ruby'
+        })
+      .to_return(status: 400, body: '{"error":"invalid short-lived access token"}', headers: { content_type: 'application/json' })
+
+    stub_request(:get, "#{@facebook_url}/oauth/access_token?client_id=#{@client_id}&client_secret=#{@client_secret}&fb_exchange_token=faked_short_lived_access_token&grant_type=fb_exchange_token")
+      .with(
+        headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Ruby'
+        })
+      .to_return(status: 200, body: '{"access_token":"faked_long_lived_access_token","expires_in":5184000}', headers: { content_type: 'application/json' })
+  end
+
 end
